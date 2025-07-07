@@ -19,5 +19,9 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void StageClear() {
+        Debug.Log("Stage Cleared, Score: " + score);
+    }
+
 }
 
