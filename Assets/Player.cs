@@ -15,12 +15,14 @@ public class Player : MonoBehaviour
     Animator animator;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -55,5 +57,10 @@ public class Player : MonoBehaviour
                 animator.SetTrigger("jump");
             }
         }
+    }
+
+    public void Die()
+    {
+        GameManager.instance.stages[GameManager.instance.currentStageIndex].Restart();
     }
 }
